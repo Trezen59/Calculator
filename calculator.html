@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <script>
+        function dis(val)
+        {
+        document.getElementById("answer").value+=val
+        }
+        //function for evaluation
+        function solve()
+        {
+        let x = document.getElementById("answer").value
+        let y = eval(x)
+        document.getElementById("answer").value = y
+        }
+        //function for clearing the display
+        function clr()
+        {
+        document.getElementById("answer").value = ""
+        }
+    </script>
+
+    <style>
+        .container{
+            text-align: center;
+            margin-top: 100px;
+            margin-left: 450px;
+            background-color: darkgrey;
+            height: 400px;
+            width: 350px;
+
+        }
+        .display{
+            background-color: darkslategray;
+        }
+        body{
+            background-color: pink;
+        }
+        .button{
+            outline: none;
+            position: relative;
+            border: none;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            font-size: 20px;
+            box-shadow: 0 4px rgba(0,0,0,0.2);
+        }
+        .button:hover{
+            background-color: slategrey;
+            cursor: pointer;
+            color: floralwhite;
+            box-shadow: none;
+        }
+        .textarea{
+            width: 250px;
+            height: 60px;
+            margin: 10px;
+            font-size: 40px;   
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="display">
+            <input type="text" class="textarea" name="input" size="30" id="answer" style="background-color: white;">
+            <br>
+        </div>
+        <div class="buttons">
+            <input type="button" class="button" name="seven" value="7" onclick="dis('7')">
+            <input type="button" class="button" name="eight" value="8" onclick="dis('8')">
+            <input type="button" class="button" name="nine" value="9" onclick="dis('9')">
+            <input type="button" class="button" name="div" value="/" onclick="dis('/')">
+            
+            <br>
+
+            <input type="button" class="button" name="four" value="4" onclick="dis('4')">
+            <input type="button" class="button" name="five" value="5" onclick="dis('5')">
+            <input type="button" class="button" name="six" value="6" onclick="dis('6')">
+            <input type="button" class="button" name="multiply" value="*" onclick="dis('*')">
+            <br>
+
+            <input type="button" class="button" name="one" value="1" onclick="dis('1')">
+            <input type="button" class="button" name="two" value="2" onclick="dis('2')">
+            <input type="button" class="button" name="three" value="3" onclick="dis('3')">
+            <input type="button" class="button" name="minus" value="-" onclick="dis('-')">
+            <br>
+            
+            <input type="button" class="button" name="zero" value="0" onclick="dis('0')">
+            <input type="button" class="button" name="decimal" value="." onclick="dis('.')">
+            <input type="button" class="button" name="plus" value="+" onclick="dis('+')">
+            <input type="button" class="button" name="equal" value="=" style="background-color: red;" onclick="solve()">
+            <br>
+
+            <input type="button" class="button" name="clear" value="Clear" onclick="clr()" style="width: 240px;">
+        </div>
+    </div>
+</body>
+</html>
